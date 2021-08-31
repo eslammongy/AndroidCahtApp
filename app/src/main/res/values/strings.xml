@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Chatting App</string>
     <string name="todo">todo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="verify_your_phone_number">Verify Your Phone Number</string>
+    <string name="please_enter_your_phone_number_for_verification">Please Enter Your Phone Number For Verification</string>
+    <string name="phone_number">phone number</string>
 </resources>
