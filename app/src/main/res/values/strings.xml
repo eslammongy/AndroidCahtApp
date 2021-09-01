@@ -6,4 +6,9 @@
     <string name="verify_your_phone_number">Verify Your Phone Number</string>
     <string name="please_enter_your_phone_number_for_verification">Please Enter Your Phone Number For Verification</string>
     <string name="phone_number">phone number</string>
+    <string name="verify_number">Verify Number</string>
+    <string name="enter_otp_code">Enter OTP Code</string>
+    <string name="we_have_sent_you_an_otp_for_n_verification_phone_number">We have sent you an OTP for \n verification phone number</string>
+    <string name="_236478">236478</string>
+    <string name="verify_otp_code">Verify OTP Code</string>
 </resources>
