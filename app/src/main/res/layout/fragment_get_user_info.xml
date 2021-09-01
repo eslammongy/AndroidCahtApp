@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryDark"
+    tools:context=".ui.fragment.GetUserInfoFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/darkBlack">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgUser"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_launcher_background"
+            app:civ_border_color="@color/lightDark"
+            app:civ_border_width="2dp" />
+
+        <ImageView
+            android:id="@+id/imgPickImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/ic_round_camera_alt_24"
+            app:layout_anchor="@id/imgUser"
+            app:layout_anchorGravity="end|center"
+            app:tint="@color/white"
+            android:contentDescription="@string/todo" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="250dp"
+        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="@color/colorGreen"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUserName"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/custom_txt_input_shape"
+                android:hint="@string/username"
+                android:inputType="text|textCapSentences"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/lightDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/glory_medium"
+                android:importantForAutofill="no" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_txt_input_shape"
+                android:hint="@string/user_email"
+                android:inputType="text|textCapSentences"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/lightDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/glory_medium"
+                android:importantForAutofill="no" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUserStatus"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_txt_input_shape"
+                android:hint="@string/hey_i_m_using_this_app"
+                android:inputType="text|textCapSentences"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/lightDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/glory_medium"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnDataDone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/card"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_button_shape"
+        android:text="@string/done"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

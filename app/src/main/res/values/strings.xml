@@ -11,4 +11,8 @@
     <string name="we_have_sent_you_an_otp_for_n_verification_phone_number">We have sent you an OTP for \n verification phone number</string>
     <string name="_236478">236478</string>
     <string name="verify_otp_code">Verify OTP Code</string>
+    <string name="username">user name</string>
+    <string name="hey_i_m_using_this_app">Hey! I,m using this app</string>
+    <string name="done">Done</string>
+    <string name="user_email">user email</string>
 </resources>
