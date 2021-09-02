@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.eslammongy.chattingapp.R
 import com.eslammongy.chattingapp.data.model.UserMode
 import com.eslammongy.chattingapp.databinding.FragmentVerifingNumberBinding
+import com.eslammongy.chattingapp.ui.fragment.VerifyingNumberFragment.Companion.newInstance
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthProvider
@@ -43,6 +45,7 @@ class VerifyingNumberFragment : Fragment() {
        if (checkPinCode()){
            val credentials = PhoneAuthProvider.getCredential(code!! , pinCode)
            userSignIn(credentials)
+
        }
    }
 
@@ -79,9 +82,12 @@ class VerifyingNumberFragment : Fragment() {
 
         firebaseAuth!!.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful){
-                val userModel = UserMode("" , "" , "" , firebaseAuth!!.currentUser!!.phoneNumber!! ,
+                val userModel = UserMode("" , "","" , "" , firebaseAuth!!.currentUser!!.phoneNumber!! ,
                 firebaseAuth!!.uid!!)
                 databaseReference!!.child(firebaseAuth?.uid!!).setValue(userModel)
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(
+                        R.id.main_container , GetUserInfoFragment()).commit()
             }else{
                 Toast.makeText(requireActivity(), "Error happening when signIn with Phone Number", Toast.LENGTH_SHORT).show()
             }

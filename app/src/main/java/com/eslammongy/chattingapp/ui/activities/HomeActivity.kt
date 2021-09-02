@@ -6,6 +6,7 @@ import com.eslammongy.chattingapp.R
 import com.eslammongy.chattingapp.databinding.ActivityHomeBinding
 import com.eslammongy.chattingapp.databinding.FragmentVerifingNumberBinding
 import com.eslammongy.chattingapp.ui.fragment.GetUserPhoneNumber
+import com.eslammongy.chattingapp.ui.fragment.VerifyingWithEmailFragment
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -14,7 +15,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportFragmentManager.beginTransaction()
-            .add(R.id.main_container, GetUserPhoneNumber())
+            .add(R.id.main_container, VerifyingWithEmailFragment())
             .commit()
     }
 }

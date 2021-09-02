@@ -15,4 +15,7 @@
     <string name="hey_i_m_using_this_app">Hey! I,m using this app</string>
     <string name="done">Done</string>
     <string name="user_email">user email</string>
+    <string name="sign_in">Sign In</string>
+    <string name="enter_email">enter email</string>
+    <string name="enter_name">enter name</string>
 </resources>
