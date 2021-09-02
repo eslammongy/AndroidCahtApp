@@ -24,4 +24,7 @@
     <string name="profile">Profile</string>
     <string name="contact">Contact</string>
     <string name="chat">Chat</string>
+    <string name="update">update</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="enter_phone">enter phone</string>
 </resources>
