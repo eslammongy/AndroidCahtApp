@@ -18,13 +18,15 @@ import com.eslammongy.chattingapp.databinding.FragmentGetUserInfoBinding
 import com.eslammongy.chattingapp.ui.activities.DashBoardActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 
 class GetUserInfoFragment : Fragment() {
 
-    private var _binding:FragmentGetUserInfoBinding? = null
+    private var _binding: FragmentGetUserInfoBinding? = null
     private val binding get() = _binding!!
     private var userImage:Uri? =null
     private lateinit var userName:String
@@ -34,7 +36,6 @@ class GetUserInfoFragment : Fragment() {
     private var firebaseAuth: FirebaseAuth? = null
     private var databaseReference: DatabaseReference? = null
     private var firebaseStorage:StorageReference? = null
-    private lateinit var cropActivityResultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,6 +49,9 @@ class GetUserInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        firebaseAuth = FirebaseAuth.getInstance()
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        firebaseStorage = FirebaseStorage.getInstance().reference
         binding.btnDataDone.setOnClickListener {
             if (checkUserInfo()){
                uploadUerInfo(userName , userEmail , userStatus , userImage!!)
@@ -90,7 +94,7 @@ class GetUserInfoFragment : Fragment() {
 
     private fun uploadUerInfo(name:String , email:String , status:String , image:Uri)= kotlin.run{
 
-         firebaseStorage!!.child(firebaseAuth!!.uid + Constants.path).putFile(image)
+         firebaseStorage!!.child(firebaseAuth!!.uid + Constants.PATH).putFile(image)
              .addOnSuccessListener{
                  val task = it.storage.downloadUrl
                  task.addOnCompleteListener { uri ->

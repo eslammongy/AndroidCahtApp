@@ -20,7 +20,7 @@
         android:id="@+id/btnProfile"
         android:enabled="true"
         android:icon="@drawable/ic_user"
-        android:title="@string/mine"
+        android:title="@string/me"
         app:cnb_textColor="@color/white" />
 
 </menu>

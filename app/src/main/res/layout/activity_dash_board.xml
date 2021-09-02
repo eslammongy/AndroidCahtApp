@@ -19,12 +19,12 @@
         android:id="@+id/bottomChip"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/custom_txt_input_shape"
+        android:background="@drawable/bottom_bar_custom_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="@dimen/h8"
         app:cnb_radius="10dp"
         app:cnb_menuResource="@menu/menu"
-
+        app:cnb_iconSize="24dp"
         app:cnb_unselectedColor="@android:color/darker_gray" />
 
     <androidx.constraintlayout.widget.Guideline

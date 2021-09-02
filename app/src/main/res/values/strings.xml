@@ -18,8 +18,10 @@
     <string name="sign_in">Sign In</string>
     <string name="enter_email">enter email</string>
     <string name="enter_name">enter name</string>
-    <string name="sign_in_with_phone_number">Sign in With Phone Number</string>
-    <string name="chat">Chat</string>
-    <string name="contact">Contact</string>
+    <string name="sign_in_with_phone_number">SignIn With Phone Number</string>
     <string name="mine">Mine</string>
+    <string name="me">Me</string>
+    <string name="profile">Profile</string>
+    <string name="contact">Contact</string>
+    <string name="chat">Chat</string>
 </resources>
