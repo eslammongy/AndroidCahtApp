@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.eslammongy.chattingapp.R
-import com.eslammongy.chattingapp.data.model.UserMode
+import com.eslammongy.chattingapp.data.model.UserModel
 import com.eslammongy.chattingapp.databinding.FragmentVerifingNumberBinding
-import com.eslammongy.chattingapp.ui.fragment.VerifyingNumberFragment.Companion.newInstance
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthProvider
@@ -82,7 +81,7 @@ class VerifyingNumberFragment : Fragment() {
 
         firebaseAuth!!.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful){
-                val userModel = UserMode("" , "","" , "" , firebaseAuth!!.currentUser!!.phoneNumber!! ,
+                val userModel = UserModel("" , "","" , "" , firebaseAuth!!.currentUser!!.phoneNumber!! ,
                 firebaseAuth!!.uid!!)
                 databaseReference!!.child(firebaseAuth?.uid!!).setValue(userModel)
                 requireActivity().supportFragmentManager.beginTransaction()

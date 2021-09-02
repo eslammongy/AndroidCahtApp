@@ -7,7 +7,7 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.eslammongy.chattingapp.ui.activities.DashBoardActivity
 import com.eslammongy.chattingapp.ui.activities.HomeActivity
-import com.eslammongy.chattingapp.util.Utilis
+import com.eslammongy.chattingapp.util.Utils
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -17,13 +17,13 @@ import com.google.firebase.messaging.FirebaseMessaging
 
 class MainActivity : AppCompatActivity() {
     private var firebaseAuth: FirebaseAuth? = null
-    private lateinit var appUtil: Utilis
+    private lateinit var appUtil: Utils
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         firebaseAuth = FirebaseAuth.getInstance()
-        appUtil = Utilis()
+        appUtil = Utils()
         Handler(Looper.getMainLooper()).postDelayed({
             if (firebaseAuth!!.currentUser == null){
                 val intent = Intent(this, HomeActivity::class.java)

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="userModel"
+            type="com.eslammongy.chattingapp.data.model.UserModel" />
+    </data>
+
+<RelativeLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,7 +25,8 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_background"
+            android:layout_marginBottom="60dp"
+            imageUrl="@{userModel.image}"
             app:civ_border_color="@color/lightDark"
             app:civ_border_width="2dp" />
 
@@ -25,7 +34,7 @@
             android:id="@+id/imgPickImage"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="130dp"
             android:src="@drawable/ic_round_camera_alt_24"
             app:layout_anchor="@id/imgUser"
             app:layout_anchorGravity="end|center"
@@ -59,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/custom_txt_input_shape2"
-                android:hint="@string/username"
+                android:hint="@{userModel.name , default = Nothing}"
                 android:inputType="text|textCapSentences"
                 android:padding="10dp"
                 android:textColor="@color/white"
@@ -75,7 +84,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/custom_txt_input_shape2"
-                android:hint="@string/user_email"
+                android:hint="@{userModel.email , default = Nothing}"
                 android:inputType="text|textCapSentences"
                 android:padding="10dp"
                 android:textColor="@color/white"
@@ -91,7 +100,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/custom_txt_input_shape2"
-                android:hint="@string/enter_phone"
+                android:hint="@{userModel.number , default = Nothing}"
                 android:inputType="text|textCapSentences"
                 android:padding="10dp"
                 android:textColor="@color/white"
@@ -107,7 +116,7 @@
                 android:layout_height="80dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/custom_txt_input_shape2"
-                android:hint="@string/hey_i_m_using_this_app"
+                android:hint="@{userModel.status , default = Nothing}"
                 android:inputType="text|textCapSentences"
                 android:padding="10dp"
                 android:textColor="@color/white"
@@ -152,3 +161,4 @@
 
 
 </RelativeLayout>
+</layout>

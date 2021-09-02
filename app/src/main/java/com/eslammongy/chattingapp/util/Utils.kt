@@ -2,7 +2,7 @@ package com.eslammongy.chattingapp.util
 
 import com.google.firebase.auth.FirebaseAuth
 
-class Utilis {
+class Utils {
 
     fun getUserUID(): String? {
         val firebaseAuth = FirebaseAuth.getInstance()
