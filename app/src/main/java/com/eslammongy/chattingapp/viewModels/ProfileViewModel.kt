@@ -12,4 +12,13 @@ class ProfileViewModel:ViewModel() {
     fun getUser():LiveData<UserModel>{
         return chatRepository.getUser()
     }
+
+    fun updateUserInfo(name:String , email:String , phone:String , status:String){
+        chatRepository.updateUserInfo(name , email , phone , status)
+
+    }
+
+    fun updateUserImage(imagePath:String){
+        chatRepository.updateUserImage(imagePath)
+    }
 }
