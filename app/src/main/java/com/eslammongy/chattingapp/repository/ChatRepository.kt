@@ -49,7 +49,6 @@ class ChatRepository {
         val mapUser: Map<String, Any> = mapOf(
             "name" to name,
             "email" to email,
-            "phone" to phone,
             "number" to phone,
             "status" to status)
 

@@ -5,11 +5,11 @@ import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 
 data class UserModel(
-    val name: String= "",
+    var name: String= "",
     val email: String="",
     val status: String="",
     val image: String="",
-    val number: String="",
+    var number: String="",
     val uID: String=""
 ){
 
